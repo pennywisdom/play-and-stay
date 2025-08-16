@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cosmic Memory Game Design System - Beautiful space-themed colors and gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic Background Gradients */
+    --background: 240 15% 8%;
+    --foreground: 300 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System */
+    --card: 245 20% 12%;
+    --card-foreground: 300 15% 90%;
+    --card-glow: 270 100% 70%;
+    --card-match: 150 100% 65%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Game UI */
+    --primary: 270 100% 70%;
+    --primary-foreground: 240 15% 8%;
+    --primary-glow: 270 100% 80%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --secondary: 245 25% 15%;
+    --secondary-foreground: 300 15% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 240 10% 20%;
+    --muted-foreground: 270 5% 60%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 300 100% 75%;
+    --accent-foreground: 240 15% 8%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 300 20% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 245 15% 20%;
+    --input: 245 20% 15%;
+    --ring: 270 100% 70%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Cosmic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(260 100% 20%), hsl(280 100% 30%), hsl(300 100% 25%));
+    --gradient-card: linear-gradient(145deg, hsl(245 25% 15%), hsl(245 20% 10%));
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 70%), hsl(300 100% 75%));
+    --gradient-success: linear-gradient(135deg, hsl(150 100% 65%), hsl(170 100% 70%));
 
-    --radius: 0.5rem;
+    /* Animations & Effects */
+    --glow-primary: 0 0 20px hsl(270 100% 70% / 0.5);
+    --glow-match: 0 0 25px hsl(150 100% 65% / 0.6);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
   }
 }
