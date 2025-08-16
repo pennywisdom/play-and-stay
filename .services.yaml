@@ -1,3 +1,4 @@
+services:
   - name: game
     path: ./
     public: true
