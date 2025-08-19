@@ -115,7 +115,7 @@ export const GameBoard = () => {
       {/* Game Header */}
       <div className="text-center space-y-2">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          Cosmic Memory
+          Cosmic Memory by pennywisdom
         </h1>
         <p className="text-muted-foreground">
           Match the cosmic pairs to win! ✨
