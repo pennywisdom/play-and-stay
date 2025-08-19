@@ -21,14 +21,28 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist",
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ["react", "react-dom"],
-          "react-router": ["react-router", "react-router-dom"],
-          "react-query": ["@tanstack/react-query"],
-          "react-hook-form": ["react-hook-form"],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('@radix-ui')) {
+              return 'radix-ui-components';
+            }
+            if (id.includes('react-hook-form')) {
+              return 'react-hook-form';
+            }
+            if (id.includes('react-router') || id.includes('react-router-dom')) {
+              return 'react-router';
+            }
+            if (id.includes('react-query')) {
+              return 'react-query';
+            }
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react';
+            }
+            return 'vendor';
+          }
         },
       },
     },
