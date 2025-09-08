@@ -5,10 +5,11 @@ import { WordSearchBoard } from "@/components/WordSearchBoard";
 import { CrosswordBoard } from "@/components/CrosswordBoard";
 import { WordleBoard } from "@/components/WordleBoard";
 import { WordBuilderBoard } from "@/components/WordBuilderBoard";
+import { SolitaireBoard } from "@/components/SolitaireBoard";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-type GameType = "hangman" | "scramble" | "wordsearch" | "crossword" | "wordle" | "builder";
+type GameType = "hangman" | "scramble" | "wordsearch" | "crossword" | "wordle" | "builder" | "solitaire";
 
 const Index = () => {
   const [currentGame, setCurrentGame] = useState<GameType>("hangman");
@@ -64,6 +65,13 @@ const Index = () => {
                 >
                   🔨 Word Builder
                 </Button>
+                <Button
+                  onClick={() => setCurrentGame("solitaire")}
+                  variant={currentGame === "solitaire" ? "default" : "outline"}
+                  className={currentGame === "solitaire" ? "bg-gradient-primary" : ""}
+                >
+                  🃏 Solitaire
+                </Button>
               </div>
             </div>
           </Card>
@@ -75,6 +83,7 @@ const Index = () => {
           {currentGame === "crossword" && <CrosswordBoard />}
           {currentGame === "wordle" && <WordleBoard />}
           {currentGame === "builder" && <WordBuilderBoard />}
+          {currentGame === "solitaire" && <SolitaireBoard />}
         </div>
       </div>
     </div>
