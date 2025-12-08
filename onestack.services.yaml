@@ -1,0 +1,35 @@
+version: v1
+
+services:
+  - name: api
+    language: go
+    ports:
+      - name: http
+        port: 8080
+        protocol: TCP
+    env:
+      - name: LOG_LEVEL
+        value: info
+      - name: ENVIRONMENT
+        value: dev
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 250m
+      limits:
+        memory: 512Mi
+        cpu: 500m
+    healthCheck:
+      liveness:
+        httpGet:
+          path: /health
+          port: 8080
+        initialDelaySeconds: 30
+        periodSeconds: 10
+      readiness:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 5
+    replicas: 1

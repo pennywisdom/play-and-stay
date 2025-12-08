@@ -1,0 +1,27 @@
+projectId: orn:onestack:project:pennywisdom:play-and-stay
+name: Play and Stay
+description: Example application for testing OneStack build pipeline
+version: 1.0.0
+product-category: demo
+team: platform-engineering
+
+contacts:
+  owner: alex.harrington@example.com
+  oncall: platform-oncall@example.com
+
+compliance:
+  level: internal
+  frameworks:
+    - GDPR
+  dataClassification: internal
+  policies:
+    - data-retention-30d
+
+tags:
+  - demo
+  - onestack
+  - build-pipeline
+
+links:
+  repository: https://github.com/pennywisdom/play-and-stay
+  documentation: https://github.com/pennywisdom/play-and-stay/blob/main/README.md
