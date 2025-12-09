@@ -2,7 +2,7 @@ version: v1
 
 services:
   - name: game
-    language: nodejs
+    language: static-site
     ports:
       - name: http
         port: 8080
