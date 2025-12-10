@@ -3,6 +3,7 @@ version: v1
 services:
   - name: game
     language: static-site
+    public: true
     ports:
       - name: http
         port: 8080
